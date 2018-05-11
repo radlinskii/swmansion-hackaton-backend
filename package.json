@@ -1,0 +1,26 @@
+{
+  "name": "swmansion-hackaton-backend",
+  "version": "0.0.1",
+  "description": "backend for a react native hackaton created at Software Mansion Hackaton May 12, 2018",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radlinskii/swmansion-hackaton-backend.git"
+  },
+  "keywords": [
+    "graphql",
+    "node",
+    "api",
+    "mongo"
+  ],
+  "author": "ignaszka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radlinskii/swmansion-hackaton-backend/issues"
+  },
+  "homepage": "https://github.com/radlinskii/swmansion-hackaton-backend#readme"
+}
