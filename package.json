@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/radlinskii/swmansion-hackaton-backend/issues"
   },
-  "homepage": "https://github.com/radlinskii/swmansion-hackaton-backend#readme"
+  "homepage": "https://github.com/radlinskii/swmansion-hackaton-backend#readme",
+  "devDependencies": {
+    "dotenv": "^5.0.1"
+  }
 }
