@@ -23,7 +23,9 @@
     "url": "https://github.com/radlinskii/swmansion-hackaton-backend/issues"
   },
   "homepage": "https://github.com/radlinskii/swmansion-hackaton-backend#readme",
-  "devDependencies": {
-    "dotenv": "^5.0.1"
+  "dependencies": {
+    "colors": "^1.2.5",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3"
   }
 }
