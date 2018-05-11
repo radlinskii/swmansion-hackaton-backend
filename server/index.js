@@ -1,11 +1,15 @@
 const errorMiddleware = require('./middleware/error');
+const graphQLHTTP = require('express-graphql');
 
 const express = require('express');
 const app = express();
 
-app.use('/', (req, res) => {
-  res.send('message: Init');
-});
+const RootSchema = require('./type/index');
+
+app.use('/graphql', graphQLHTTP({
+  schema: RootSchema,
+  graphiql: true,
+}));
 
 app.use(errorMiddleware);
 
