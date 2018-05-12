@@ -4,6 +4,7 @@ const addUserMutation = require('./mutation/add-user');
 const addTaskMutation = require('./mutation/add-task');
 const addDoneTaskMutation = require('./mutation/add-done-task');
 const addSprintMutation = require('./mutation/add-sprint');
+const addRoomMutation = require('./mutation/add-room');
 
 const RoomQuery = require('./query/room');
 
@@ -28,6 +29,7 @@ const Mutation = new GraphQLObjectType({
     addTask: addTaskMutation,
     addDoneTask: addDoneTaskMutation,
     addSprint: addSprintMutation,
+    addRoom: addRoomMutation,
   },
 });
 
