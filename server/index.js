@@ -6,6 +6,8 @@ const app = express();
 
 const RootSchema = require('./type/index');
 
+require('./middleware')(app);
+
 app.use('/graphql', graphQLHTTP({
   schema: RootSchema,
   graphiql: true,
