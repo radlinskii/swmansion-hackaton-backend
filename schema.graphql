@@ -1,0 +1,45 @@
+# source: http://localhost:4000/graphql
+# timestamp: Sat May 12 2018 12:12:37 GMT+0200 (CEST)
+
+schema {
+  query: RootQuery
+}
+
+type DoneTask {
+  id: ID
+  date: String
+  user: User
+  task: Task
+}
+
+type Room {
+  id: ID
+  sprint: Sprint
+  roommates: [User]
+}
+
+type RootQuery {
+  user(id: ID): User
+  room(id: ID): Room
+}
+
+type Sprint {
+  id: ID
+  prize: String
+  deadline: String
+  doneTasks: [DoneTask]
+}
+
+type Task {
+  id: ID
+  title: String
+  reward: Int
+  iconIndex: Int
+}
+
+type User {
+  id: ID
+  username: String
+  password: String
+  points: Int
+}
