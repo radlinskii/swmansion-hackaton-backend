@@ -1,5 +1,10 @@
 const TaskType = require('./task');
 const UserType = require('./user');
+const SprintType = require('./sprint');
+const DoneTaskModel = require('../model/done-task');
+const UserModel = require('../model/user');
+const TaskModel = require('../model/task');
+const SprintModel = require('../model/sprint');
 
 const graphql = require('graphql');
 const {
@@ -16,16 +21,23 @@ const DoneTaskType = new GraphQLObjectType({
     date: { type: GraphQLString, },
     user: {
       type: UserType,
-      resolve(parent) {
-        //code to get data from db / pther source
-        //return _.find(users, { id: parent.user.id, });
+      async resolve(parent) {
+        const doneTask = await DoneTaskModel.findById(parent._id).exec();
+        return await UserModel.findById(doneTask.user).exec();
       },
     },
     task: {
       type: TaskType,
-      resolve(parent) {
-        //code to get data from db / pther source
-        //return _.find(tasks, { id: parent.task.id, });
+      async resolve(parent) {
+        const doneTask = await DoneTaskModel.findById(parent._id).exec();
+        return await TaskModel.findById(doneTask.task).exec();
+      },
+    },
+    sprint: {
+      type: SprintType,
+      async resolve(parent) {
+        const doneTask = await DoneTaskModel.findById(parent._id).exec();
+        return await SprintModel.findById(doneTask.sprint).exec();
       },
     },
   }),

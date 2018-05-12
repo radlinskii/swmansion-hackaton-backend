@@ -10,12 +10,6 @@ const SprintSchema = new Schema({
     type: String,
     required: true,
   },
-  doneTasks: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'DoneTask',
-    },
-  ],
 });
 
 module.exports= mongoose.model('Sprint', SprintSchema);

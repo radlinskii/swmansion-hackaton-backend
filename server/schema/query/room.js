@@ -1,6 +1,7 @@
 const RoomType = require('../../type/room');
 const { GraphQLID, } = require('graphql');
 
+const RoomModel = require('../../model/room');
 
 module.exports = {
   type: RoomType,
@@ -8,5 +9,6 @@ module.exports = {
   resolve(parent, args) {
     //code to get data from db / pther source
     //return _.find(rooms, { id: args.id, });
+    return RoomModel.findById(args.id);
   },
 };

@@ -16,6 +16,11 @@ const doneTaskSchema = new Schema({
     ref: 'Task',
     required: true,
   },
+  sprint: {
+    type: Schema.Types.ObjectId,
+    ref: 'Sprint',
+    required: true,
+  },
 
 });
 

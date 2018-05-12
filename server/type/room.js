@@ -1,5 +1,8 @@
 const UserType = require('./user');
 const SprintType = require('./sprint');
+const TaskType = require('./task');
+const RoomModel = require('../model/room');
+const SprintModel = require('../model/sprint');
 const graphql = require('graphql');
 const {
   GraphQLObjectType,
@@ -14,9 +17,11 @@ const RoomType = new GraphQLObjectType({
     id: { type: GraphQLID, },
     sprint: {
       type: SprintType,
-      resolve(parent) {
+      async resolve(parent) {
         //const room = _.find(rooms, { id: parent.id, });
         //return room.sprint;
+        const Room = await RoomModel.findById(parent._id).exec();
+        return await SprintModel.findById(Room.sprint).exec();
       },
     },
     roommates: {
