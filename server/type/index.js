@@ -57,7 +57,7 @@ const rooms = [
 
 
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
+  name: 'RootQuery',
   fields: {
     user: {
       type: UserType,

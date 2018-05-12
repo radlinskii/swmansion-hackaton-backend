@@ -4,12 +4,12 @@ const graphQLHTTP = require('express-graphql');
 const express = require('express');
 const app = express();
 
-const RootSchema = require('./type/index');
+const schema = require('./type');
 
 require('./middleware')(app);
 
 app.use('/graphql', graphQLHTTP({
-  schema: RootSchema,
+  schema,
   graphiql: true,
 }));
 
