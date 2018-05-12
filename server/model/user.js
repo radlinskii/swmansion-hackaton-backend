@@ -11,7 +11,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-
+  points: {
+    type: Number,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('User', userSchema);
