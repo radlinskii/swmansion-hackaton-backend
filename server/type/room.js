@@ -7,6 +7,34 @@ const {
   GraphQLList,
 } = graphql;
 
+const RoomType = new GraphQLObjectType({
+  name: 'Room',
+
+  fields: () => ({
+    id: { type: GraphQLID, },
+    sprint: {
+      type: SprintType,
+      resolve(parent) {
+        //const room = _.find(rooms, { id: parent.id, });
+        //return room.sprint;
+      },
+    },
+    roommates: {
+      type: new GraphQLList(UserType),
+      resolve(parent) {
+        //const room = _.find(rooms, { id: parent.id, });
+        //return room.roommates;
+      },
+    },
+  }),
+});
+
+module.exports = RoomType;
+
+
+/*
+
+
 const _ = require('lodash');
 
 const users = [
@@ -55,26 +83,5 @@ const rooms = [
   { id: '2', roommates: [users[2], users[3], ], sprint: sprints[1], },
 ];
 
-const RoomType = new GraphQLObjectType({
-  name: 'Room',
 
-  fields: () => ({
-    id: { type: GraphQLID, },
-    sprint: {
-      type: SprintType,
-      resolve(parent) {
-        const room = _.find(rooms, { id: parent.id, });
-        return room.sprint;
-      },
-    },
-    roommates: {
-      type: new GraphQLList(UserType),
-      resolve(parent) {
-        const room = _.find(rooms, { id: parent.id, });
-        return room.roommates;
-      },
-    },
-  }),
-});
-
-module.exports = RoomType;
+ */
