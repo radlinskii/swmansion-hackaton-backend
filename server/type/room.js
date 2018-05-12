@@ -46,7 +46,7 @@ const doneTasks = [
 ];
 
 const sprints = [
-  { id: '1', prize: 'piwo', deadline: '7/13/2010', doneTasks: [doneTasks[0], doneTasks[1], ], },
+  { id: '1', prize: 'piwo', deadline: '7/13/2018', doneTasks: [doneTasks[0], doneTasks[1], ], },
   { id: '2', prize: 'wodka', deadline: '7/29/2018', doneTasks: [doneTasks[2], doneTasks[3], ], },
 ];
 
