@@ -5,13 +5,14 @@ const graphql = require('graphql');
 const {
   GraphQLString,
   GraphQLInt,
+  GraphQLNonNull,
 } = graphql;
 
 module.exports = {
   type: TaskType,
   args: {
-    title: { type: GraphQLString, },
-    reward: { type: GraphQLInt, },
+    title: { type: new GraphQLNonNull(GraphQLString), },
+    reward: { type: new GraphQLNonNull(GraphQLInt), },
     iconIndex: { type: GraphQLInt, },
   },
   resolve(parent, args) {

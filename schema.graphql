@@ -1,8 +1,9 @@
-# source: http://localhost:4000/graphql
-# timestamp: Sat May 12 2018 12:12:37 GMT+0200 (CEST)
+# source: https://house-app-api.herokuapp.com/graphql
+# timestamp: Sun May 13 2018 11:09:48 GMT+0200 (CEST)
 
 schema {
   query: RootQuery
+  mutation: Mutation
 }
 
 type DoneTask {
@@ -10,12 +11,23 @@ type DoneTask {
   date: String
   user: User
   task: Task
+  sprint: Sprint
+}
+
+type Mutation {
+  addUser(username: String, password: String, points: Int): User
+  addTask(title: String, reward: Int, iconIndex: Int): Task
+  addDoneTask(date: String!, userID: ID!, taskID: ID!, sprintID: ID!): DoneTask
+  addSprint(prize: String!, deadline: String!): Sprint
+  addRoom(name: String!, sprintID: ID!): Room
 }
 
 type Room {
   id: ID
+  name: String
   sprint: Sprint
   roommates: [User]
+  doneTasks: [DoneTask]
 }
 
 type RootQuery {
@@ -27,7 +39,6 @@ type Sprint {
   id: ID
   prize: String
   deadline: String
-  doneTasks: [DoneTask]
 }
 
 type Task {

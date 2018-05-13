@@ -13,7 +13,6 @@ const taskSchema = new Schema({
   },
   iconIndex: {
     type: Number,
-    required: true,
   },
 
 });
