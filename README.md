@@ -1,4 +1,10 @@
 # swmansion-hackaton
-app created for hackaton hosted by software mansion
+backend for the [house-app](https://github.com/agnieszka-miszkurka/house-app)
 
-nodemon + eslint <3
+in **node.js**
+
+using *express* and **graphql**
+
+check out the [graphiql](https://house-app-api.herokuapp.com/graphql) endpoint
+
+> nodemon + eslint :heart:
