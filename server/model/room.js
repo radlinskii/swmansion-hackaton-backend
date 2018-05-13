@@ -11,7 +11,7 @@ const RoomSchema = new Schema({
     ref: 'Sprint',
     required: true,
   },
-  users: [
+  roommates: [
     {
       type: Schema.Types.ObjectId,
       ref: 'User',

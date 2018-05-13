@@ -21,8 +21,6 @@ const RoomType = new GraphQLObjectType({
     sprint: {
       type: SprintType,
       async resolve(parent) {
-        //const room = _.find(rooms, { id: parent.id, });
-        //return room.sprint;
         const Room = await RoomModel.findById(parent._id).exec();
         return await SprintModel.findById(Room.sprint).exec();
       },
@@ -30,8 +28,7 @@ const RoomType = new GraphQLObjectType({
     roommates: {
       type: new GraphQLList(UserType),
       resolve(parent) {
-        //const room = _.find(rooms, { id: parent.id, });
-        //return room.roommates;
+        return parent.roommates;
       },
     },
     doneTasks: {

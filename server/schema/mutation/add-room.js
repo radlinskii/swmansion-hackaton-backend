@@ -19,7 +19,6 @@ module.exports = {
 
   async resolve(parent, args) {
     const sprint = await SprintModel.findById(args.sprintID).exec();
-    //console.log(user);
     const Room = new DoneRoomModel({
       name: args.name,
       sprint: sprint,
